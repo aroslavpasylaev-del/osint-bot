@@ -38,7 +38,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.enums import ParseMode
 
 # ===== КОНФИГ =====
-BOT_TOKEN = 8697901420:AAHylNw2klqOaie2JOnEfyuGg8NKHyGDHnk   # <-- ЗАМЕНИ НА СВОЙ ТОКЕН
+BOT_TOKEN = 8697901420:AAHylNw2klqOaie2JOnEfyuGg8NKHyGDHnk"   # <-- ЗАМЕНИ НА СВОЙ ТОКЕН
 ADMIN_IDS = []                  # можешь оставить пустым
 
 logging.basicConfig(level=logging.INFO)
