@@ -18,7 +18,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.enums import ParseMode
 
 # ===== КОНФИГ =====
-BOT_TOKEN = "8697901420:AAHylNw2klqOaie2JOnEfyuGg8NKHyGDHnk # язык: Python 3.11, файл: main.py
+BOT_TOKEN = "8697901420:AAHylNw2klqOaie2JOnEfyuGg8NKHyGDHnk" # язык: Python 3.11, файл: main.py
 # Telegram bot для OSINT: пробив по номеру, email, username, ФИО, авто, IP, домену
 
 import asyncio
