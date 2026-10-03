@@ -432,10 +432,32 @@ async def handle_query(msg: types.Message):
         await status.edit_text(f"❌ <b>Ошибка:</b> <code>{e}</code>")
 
 
+# ===== ЗАГЛУШКА ДЛЯ RENDER — ОТКРЫВАЕТ ПОРТ =====
+import os
+from aiohttp import web
+
+async def fake_web_server():
+    """Пустой сервер. Нужен только чтобы Render видел открытый порт."""
+    app = web.Application()
+    app.router.add_get("/", lambda r: web.Response(text="ok"))
+    port = int(os.environ.get("PORT", 10000))
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, "0.0.0.0", port)
+    await site.start()
+    logger.info(f"Fake server started on port {port}")
+    while True:
+        await asyncio.sleep(3600)
+
+
 # ===== ЗАПУСК =====
 async def main():
     logger.info("OSINT Bot started")
-    await dp.start_polling(bot)
+    # Запускаем заглушку и бота одновременно
+    await asyncio.gather(
+        fake_web_server(),
+        dp.start_polling(bot),
+    )
 
 
 if __name__ == "__main__":
