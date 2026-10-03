@@ -1,3 +1,4 @@
+# _python_version: 3.11.9
 # язык: Python 3.11, файл: main.py
 # Telegram bot для OSINT: пробив по номеру, email, username, ФИО, авто, IP, домену
 
